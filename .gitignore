@@ -1,0 +1,30 @@
+# Secrets & real config
+.env
+config.json
+!config-example.json
+token.json
+
+# -------------------------------------------------------
+# Personnel / internal lists — DO NOT commit
+# -------------------------------------------------------
+_dept_list.csv
+_pm_people.csv
+_processors_list.csv
+pm_cm_list.csv
+
+# Encoded credential files
+nginx_b64.txt
+push_b64.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.kiro/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+{
+  "_comment": "在 data/config.json 中添加下面的 andon_reminder 块",
+
+  "andon_reminder": {
+    "enabled": true,
+    "webhook_url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_WEBHOOK_KEY_HERE",
+    "interval_secs": 300,
+    "db_file": "andon.db",
+    "message_header": "⚠️ 以下 Andon Cord 任务尚未完成，请及时处理："
+  }
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Redirecting...</title>
+<script>
+var no = new URLSearchParams(location.search).get('no');
+if (no) {
+    location.replace('/wh-v2/index.html#/wh/andonCordDetail?ticketNo=' + no);
+} else {
+    location.replace('/wh-v2/index.html');
+}
+</script>
+</head>
+<body>Redirecting...</body>
+</html>
