@@ -63,7 +63,7 @@ DEPT_DISPLAY = {
 }
 
 USERID_AREA_OVERRIDE = {
-    "xiaolinchen":   "Canada",
+    "xiaolinchen":   "LA",
     "hongbangzhang": "Canada",
     "sashamao":      "Canada",
 }
