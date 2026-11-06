@@ -99,8 +99,8 @@ PM_POSITION_KEYWORDS = (
 )
 POSITION_EXCLUDE = ("Intern", "Engineer", "Developer", "Software", "Java", "QA")
 
-CM_EXTRA_USERIDS: tuple = ("ChengYan",)
-PM_EXTRA_USERIDS = ("ChaiYanHua", "Julie.Zhu")
+CM_EXTRA_USERIDS: tuple = ("ChengYan", "ChaiYanHua")
+PM_EXTRA_USERIDS = ("Julie.Zhu",)
 
 
 # ── 1. Query ──────────────────────────────────────────────────────────────────
@@ -296,7 +296,12 @@ def push_webhook(webhook_url: str, content: str, mentioned_list: list) -> bool:
 def run(webhook_url: str = WEBHOOK_URL, group: str | None = None) -> int:
     target_areas = PUSH_GROUPS.get(group) if group else None
     group_label  = group or "all"
-    print(f"[pm-cm-push] querying... {datetime.now(LA).strftime('%Y-%m-%d %H:%M PT')}  group={group_label}")
+    now = datetime.now(LA)
+    if now.weekday() >= 5:
+        print(f"[pm-cm-push] weekend ({now.strftime('%A')}), skip")
+        return 0
+
+    print(f"[pm-cm-push] querying... {now.strftime('%Y-%m-%d %H:%M PT')}  group={group_label}")
 
     df = query_pending()
     total  = df["ticket_no"].nunique()
